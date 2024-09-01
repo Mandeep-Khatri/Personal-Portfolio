@@ -316,13 +316,15 @@ main {
 
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
   overflow: hidden;
   transition: var(--transition-2);
-  background-color: var(--border-gradient-onyx);
+  background-color: var(--border-gradient-onyx); 
+  height: 120px;
+  max-height: 130px;
 }
 
-.sidebar.active { max-height: 405px; }
+.sidebar.active { height: fit-content;
+max-height: max-content; }
 
 .sidebar-info {
   position: relative;
@@ -331,12 +333,18 @@ main {
   align-items: center;
   gap: 15px;
 }
+
+ .avatar-box {
+   border-radius: 50%;
+   overflow: hidden;
+   width: 140px;
+   height: 140px;
+ }
+
 .circular-image{
-  border-radius: 80%;
-  height: 180px;
-  width: 180px;
-  border: 4px;
-  border-color: rgb(227, 24, 24);
+  height: 100%;
+  width: 100%;
+object-fit:cover;
 }
 .info-content .name {
   color: var(--white-2);
@@ -462,7 +470,7 @@ main {
   left: 0;
   width: 100%;
   background: var(--border-gradient-onyx);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
@@ -1231,10 +1239,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   #RESPONSIVE
 \*-----------------------------------*/
 
+
+/* @media (max-width: 450px) {
+  .sidebar {
+      min-height: 90px;
+      height: 100px;
+    }
+} */
+
 /**
  * responsive larger than 450px screen
  */
-
 @media (min-width: 450px) {
 
   /**
@@ -1254,7 +1269,9 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 }
 
-
+.sidebar{
+  min-height: 239px;
+}
 
 
 
@@ -1339,9 +1356,13 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { gap: 25px; }
 
-  .avatar-box { border-radius: 30px; }
+  .avatar-box {
+     border-radius: 50%;
+    overflow: hidden;
+    width: 180px;
+    height: 180px;
+    }
 
-  .avatar-box img { width: 120px; }
 
   .info-content .name { margin-bottom: 15px; }
 
@@ -1837,7 +1858,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .sidebar-info { flex-direction: column; }
 
-  .avatar-box img { width: 150px; }
+  /* .avatar-box img { width: 150px; } */
 
   .info-content .name {
     white-space: nowrap;
