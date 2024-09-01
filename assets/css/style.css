@@ -1270,7 +1270,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 }
 
 .sidebar{
-  min-height: 239px;
+  min-height: 170px;
 }
 
 
@@ -1310,9 +1310,12 @@ textarea.form-input::-webkit-resizer { display: none; }
   .sidebar, article {
     width: 520px;
     margin-inline: auto;
-    padding: 30px;
+    padding: 30px 30px 10px 30px;
   }
 
+    .sidebar {
+      min-height: 240px;
+    }
   .article-title {
     font-weight: var(--fw-600);
     padding-bottom: 15px;
